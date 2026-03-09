@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,23 @@
 body{
 margin:0;
 font-family:Arial;
-background:#ffffff;
+background:white;
 text-align:center;
+}
+
+/* LOADING SCREEN */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+z-index:9999;
 }
 
 /* HEADER */
@@ -22,12 +38,15 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-background:linear-gradient(90deg,#ff0000,#ff4040);
+
+background:#ff0000;
 color:white;
+
 padding:18px;
 font-size:26px;
 font-weight:bold;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+box-shadow:0 0 15px red;
 }
 
 header img{
@@ -35,10 +54,6 @@ width:34px;
 }
 
 /* BANNER */
-
-.banner{
-width:100%;
-}
 
 .banner img{
 width:100%;
@@ -50,6 +65,7 @@ display:block;
 
 .menu{
 padding:15px;
+padding-bottom:80px;
 }
 
 /* BUTTON */
@@ -59,18 +75,21 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
+
 width:90%;
 max-width:420px;
+
 margin:12px auto;
 padding:14px;
 
 background:#ff0000;
 color:white;
+
 font-size:18px;
 font-weight:bold;
 
 border:none;
-border-radius:10px;
+border-radius:12px;
 
 cursor:pointer;
 
@@ -83,7 +102,7 @@ width:22px;
 
 .btn:hover{
 background:#cc0000;
-transform:scale(1.03);
+transform:scale(1.05);
 }
 
 /* IFRAME */
@@ -92,7 +111,29 @@ iframe{
 width:100%;
 height:520px;
 border:none;
-margin-top:10px;
+}
+
+/* BOTTOM MENU */
+
+.bottomMenu{
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+
+display:flex;
+justify-content:space-around;
+
+border-top:2px solid #eee;
+padding:10px 0;
+}
+
+.bottomMenu button{
+background:none;
+border:none;
+font-size:16px;
+font-weight:bold;
+color:red;
 }
 
 </style>
@@ -100,51 +141,93 @@ margin-top:10px;
 
 <body>
 
+<div id="loader">
+Loading...
+</div>
+
 <header>
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 জয়া টিকটক বোস্টার
+
 </header>
 
 <div class="banner">
+
 <img src="https://raw.githubusercontent.com/emamulk63-design/joyatiktokbost/main/joyatiktok.png">
+
 </div>
 
 <div class="menu">
 
 <button class="btn" onclick="openSite()">
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 Views (ভিউস গ্রো করুন)
+
 </button>
 
 <button class="btn" onclick="openSite()">
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 Comments Hearts (কমেন্টে লাভ নিন)
+
 </button>
 
 <button class="btn" onclick="openSite()">
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 Favorites (প্রিয় তালিকায় সেট করুন)
+
 </button>
 
 <button class="btn" onclick="openSite()">
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 Repost (দর্শক বাড়ান)
+
 </button>
 
 <button class="btn" onclick="openSite()">
+
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+
 Hearts (লাইক নিন)
+
 </button>
 
 </div>
 
 <iframe id="frame"></iframe>
 
+<div class="bottomMenu">
+
+<button onclick="scrollToTop()">Home</button>
+
+<button onclick="openSite()">Boost</button>
+
+</div>
+
 <script>
 
 function openSite(){
 document.getElementById("frame").src="https://zefoy.com/";
 }
+
+function scrollToTop(){
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* LOADING */
+
+setTimeout(function(){
+document.getElementById("loader").style.display="none";
+},1500);
 
 </script>
 
