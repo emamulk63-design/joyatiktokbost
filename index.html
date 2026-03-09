@@ -8,7 +8,6 @@
 <title>জয়া টিকটক বোস্টার</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -17,7 +16,6 @@ text-align:center;
 }
 
 /* LOADING SCREEN */
-
 #loader{
 position:fixed;
 width:100%;
@@ -32,29 +30,23 @@ z-index:9999;
 }
 
 /* HEADER */
-
 header{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-
 background:#ff0000;
 color:white;
-
 padding:18px;
 font-size:26px;
 font-weight:bold;
-
 box-shadow:0 0 15px red;
 }
-
 header img{
 width:34px;
 }
 
 /* BANNER */
-
 .banner img{
 width:100%;
 height:auto;
@@ -62,72 +54,49 @@ display:block;
 }
 
 /* MENU */
-
 .menu{
 padding:15px;
 padding-bottom:80px;
 }
 
 /* BUTTON */
-
 .btn{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-
 width:90%;
 max-width:420px;
-
 margin:12px auto;
 padding:14px;
-
 background:#ff0000;
 color:white;
-
 font-size:18px;
 font-weight:bold;
-
 border:none;
 border-radius:12px;
-
 cursor:pointer;
-
 transition:0.3s;
 }
-
 .btn img{
 width:22px;
 }
-
 .btn:hover{
 background:#cc0000;
 transform:scale(1.05);
 }
 
-/* IFRAME */
-
-iframe{
-width:100%;
-height:520px;
-border:none;
-}
-
 /* BOTTOM MENU */
-
 .bottomMenu{
 position:fixed;
 bottom:0;
 width:100%;
 background:white;
-
 display:flex;
 justify-content:space-around;
-
 border-top:2px solid #eee;
 padding:10px 0;
 }
-
 .bottomMenu button{
 background:none;
 border:none;
@@ -146,89 +115,63 @@ Loading...
 </div>
 
 <header>
-
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 জয়া টিকটক বোস্টার
-
 </header>
 
 <div class="banner">
-
 <img src="https://raw.githubusercontent.com/emamulk63-design/joyatiktokbost/main/joyatiktok.png">
-
 </div>
 
 <div class="menu">
 
-<button class="btn" onclick="openSite()">
-
+<button class="btn" onclick="openNewTab('https://zefoy.com/')">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 Views (ভিউস গ্রো করুন)
-
 </button>
 
-<button class="btn" onclick="openSite()">
-
+<button class="btn" onclick="openNewTab('https://zefoy.com/')">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 Comments Hearts (কমেন্টে লাভ নিন)
-
 </button>
 
-<button class="btn" onclick="openSite()">
-
+<button class="btn" onclick="openNewTab('https://zefoy.com/')">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 Favorites (প্রিয় তালিকায় সেট করুন)
-
 </button>
 
-<button class="btn" onclick="openSite()">
-
+<button class="btn" onclick="openNewTab('https://zefoy.com/')">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 Repost (দর্শক বাড়ান)
-
 </button>
 
-<button class="btn" onclick="openSite()">
-
+<button class="btn" onclick="openNewTab('https://zefoy.com/')">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
-
 Hearts (লাইক নিন)
-
 </button>
 
 </div>
 
-<iframe id="frame"></iframe>
-
 <div class="bottomMenu">
-
 <button onclick="scrollToTop()">Home</button>
-
-<button onclick="openSite()">Boost</button>
-
+<button onclick="openNewTab('https://zefoy.com/')">Boost</button>
 </div>
 
 <script>
-
-function openSite(){
-document.getElementById("frame").src="https://zefoy.com/";
-}
-
-function scrollToTop(){
-window.scrollTo({top:0,behavior:"smooth"});
-}
-
 /* LOADING */
-
 setTimeout(function(){
 document.getElementById("loader").style.display="none";
 },1500);
 
+/* Open new tab function */
+function openNewTab(url){
+window.open(url,'_blank');
+}
+
+/* Scroll to top */
+function scrollToTop(){
+window.scrollTo({top:0,behavior:"smooth"});
+}
 </script>
 
 </body>
